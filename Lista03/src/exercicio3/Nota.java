@@ -1,22 +1,22 @@
 package exercicio3;
 
 public class Nota {
-    private String titulo;
-    private double valor;
+    private String title;
+    private double score;
 
-    public String getTitulo() {
-        return titulo;
+    public String getTitle() {
+        return title;
     }
 
-    public void setTitulo(String titulo) {
-        this.titulo = titulo;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
-    public double getValor() {
-        return valor;
+    public double getScore() {
+        return score;
     }
 
-    public void setValor(double valor) {
-        this.valor = valor;
+    public void setScore(double score) {
+        this.score = score;
     }
 }

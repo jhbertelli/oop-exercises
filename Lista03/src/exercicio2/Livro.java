@@ -41,10 +41,7 @@ public class Livro {
     }
 
     public String verificarDisponibilidade() {
-        if (this.disponivel) {
-            return "Disponível";
-        }
-        return "Indisponível";
+        return this.disponivel ? "Disponível" : "Indisponível";
     }
 
     public void emprestarLivro() {

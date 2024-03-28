@@ -6,8 +6,8 @@ public class Main {
     public static void main(String[] args) {
         Aluno aluno = new Aluno();
 
-        aluno.setNome("Thomas");
-        aluno.setMatricula(1412);
+        aluno.setName("Thomas");
+        aluno.setEnrollmentNumber(1412);
 
         int countNotas = Integer.parseInt(
             JOptionPane.showInputDialog("Quantas notas?")
@@ -16,25 +16,25 @@ public class Main {
         for (int i = 0; i < countNotas; i++) {
             Nota nota = new Nota();
 
-            nota.setTitulo(JOptionPane
+            nota.setTitle(JOptionPane
                 .showInputDialog("Descrição da nota")
             );
 
-            nota.setValor(Double
+            nota.setScore(Double
                 .parseDouble(JOptionPane.showInputDialog("Valor da nota"))
             );
 
-            aluno.adicionarNota(nota);
+            aluno.addGrade(nota);
         }
 
         JOptionPane
             .showConfirmDialog(null,
-                "Média do aluno: " + aluno.calcularMedia()
+                "Média do aluno: " + aluno.calculateAverageGrade()
             );
 
         JOptionPane
             .showConfirmDialog(null,
-                String.format("O aluno %s está: %s", aluno.getNome(), aluno.verificarAprovacao())
+                String.format("O aluno %s está: %s", aluno.getName(), aluno.checkApproval())
             );
     }
 }

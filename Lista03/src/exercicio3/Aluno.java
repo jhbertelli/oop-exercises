@@ -3,48 +3,48 @@ package exercicio3;
 import java.util.ArrayList;
 
 public class Aluno {
-    private String nome;
-    private int matricula;
-    private ArrayList<Nota> notas = new ArrayList<Nota>();
+    private String name;
+    private int enrollmentNumber; // matrícula
+    private ArrayList<Nota> grades = new ArrayList<Nota>();
 
 
-    public String getNome() {
-        return nome;
+    public String getName() {
+        return name;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public int getMatricula() {
-        return matricula;
+    public int getEnrollmentNumber() {
+        return enrollmentNumber;
     }
 
-    public void setMatricula(int matricula) {
-        this.matricula = matricula;
+    public void setEnrollmentNumber(int enrollmentNumber) {
+        this.enrollmentNumber = enrollmentNumber;
     }
 
-    public ArrayList<Nota> getNotas() {
-        return notas;
+    public ArrayList<Nota> getGrades() {
+        return grades;
     }
 
-    public void adicionarNota(Nota nota) {
-        notas.add(nota);
+    public void addGrade(Nota nota) {
+        grades.add(nota);
     }
 
-    public double calcularMedia() {
+    public double calculateAverageGrade() {
         double soma = 0;
 
-        for (var nota : notas)
-            soma += nota.getValor();
+        for (var nota : grades)
+            soma += nota.getScore();
 
-        double media = soma / notas.size();
+        double media = soma / grades.size();
 
         return media;
     }
 
-    public String verificarAprovacao() {
-        if (calcularMedia() >= 7)
+    public String checkApproval() {
+        if (calculateAverageGrade() >= 7)
             return "Aprovado";
 
         return "Reprovado";
