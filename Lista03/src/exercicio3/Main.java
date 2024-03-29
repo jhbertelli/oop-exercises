@@ -1,6 +1,7 @@
 package exercicio3;
 
-import javax.swing.*;
+import static javax.swing.JOptionPane.showConfirmDialog;
+import static javax.swing.JOptionPane.showInputDialog;
 
 public class Main {
     public static void main(String[] args) {
@@ -9,32 +10,38 @@ public class Main {
         aluno.setName("Thomas");
         aluno.setEnrollmentNumber(1412);
 
-        int countNotas = Integer.parseInt(
-            JOptionPane.showInputDialog("Quantas notas?")
+        int countGrades = Integer.parseInt(
+            showInputDialog("Quantas notas?")
         );
 
-        for (int i = 0; i < countNotas; i++) {
-            Nota nota = new Nota();
+        for (int i = 0; i < countGrades; i++) {
+            Nota grade = new Nota();
 
-            nota.setTitle(JOptionPane
-                .showInputDialog("Descrição da nota")
+            grade.setTitle(showInputDialog("Descrição da nota"));
+
+            grade.setScore(
+                Double.parseDouble(showInputDialog("Valor da nota"))
             );
 
-            nota.setScore(Double
-                .parseDouble(JOptionPane.showInputDialog("Valor da nota"))
-            );
-
-            aluno.addGrade(nota);
+            aluno.addGrade(grade);
         }
 
-        JOptionPane
-            .showConfirmDialog(null,
-                "Média do aluno: " + aluno.calculateAverageGrade()
-            );
+        showConfirmDialog(null,
+            "Média do aluno: " + aluno.calculateAverageGrade()
+        );
 
-        JOptionPane
-            .showConfirmDialog(null,
-                String.format("O aluno %s está: %s", aluno.getName(), aluno.checkApproval())
+        showConfirmDialog(null,
+            String.format("O aluno %s está: %s", aluno.getName(), aluno.checkApproval())
+        );
+
+        for (var grade : aluno.getGrades())
+            showConfirmDialog(
+                null,
+                String.format(
+                    "Título: %s\nNota: %.2f",
+                    grade.getTitle(),
+                    grade.getScore()
+                )
             );
     }
 }
