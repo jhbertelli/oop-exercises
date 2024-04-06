@@ -3,7 +3,7 @@ package exercicio5;
 public class Funcionario {
     private final float TAXES_PERCENTAGE = 0.3f;
     private String name;
-    private double grossSalary; // salário líquido
+    private double grossSalary; // salário bruto
     private String role;
 
 

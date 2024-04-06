@@ -22,7 +22,7 @@ public class Main {
 
         worker.setGrossSalary(
             Double.parseDouble(
-                showInputDialog("Informe o salário líquido do funcionário:")
+                showInputDialog("Informe o salário bruto do funcionário:")
             )
         );
     }

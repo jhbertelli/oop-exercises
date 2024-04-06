@@ -40,7 +40,7 @@ public class Paciente {
         showConfirmDialog(
             null,
             String.format(
-                "Médico: %s\nCRM: %s\nQueixas: %s\nData: %s\nMedicamentos prescrito: %s",
+                "Médico: %s\nCRM: %s\nQueixas: %s\nData: %s\nMedicamentos prescritos: %s",
                 medic.getName(),
                 medic.getCrm(),
                 appointment.getComplaints(),
